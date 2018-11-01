@@ -5,6 +5,7 @@ import com.example.retina.samples.main.retrofit.ApiInterface
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module.applicationContext
@@ -58,7 +59,7 @@ internal fun provideRetrofit(gson: Gson, client: OkHttpClient): Retrofit {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addConverterFactory(UnitConverterFactory)
             .addConverterFactory(ScalarsConverterFactory.create())
-//            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .baseUrl(BASE_URL)
             .build()
 }

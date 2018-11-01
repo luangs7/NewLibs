@@ -62,7 +62,7 @@ dependencies {
 
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:0.26.1'
-    implementation 'ru.gildor.coroutines:kotlin-coroutines-retrofit:0.13.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0'
 
 
     implementation 'com.github.luangs7:LGUtilsK:V1.5.1'
