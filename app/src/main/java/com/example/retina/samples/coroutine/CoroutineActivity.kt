@@ -14,7 +14,7 @@ import org.koin.android.ext.android.inject
 
 class CoroutineActivity : AppCompatActivity() {
 
-    val api: ApiInterface by inject()
+    private val api: ApiInterface by inject()
     lateinit var snack: Snackbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class CoroutineActivity : AppCompatActivity() {
 
     }
 
-    suspend fun requestApi() {
+    suspend private fun requestApi() {
 
         snack = createSnackProgress("Buscando dados...")
         snack.show()
